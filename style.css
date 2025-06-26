@@ -1,0 +1,59 @@
+@charset "UTF8";
+
+body {
+    width: 98vw;
+    height: 100vh;
+    background-color: #ff993a;
+}
+
+main {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#container_grid {
+    display: grid;
+    place-items: center;
+    gap: 40px;
+    grid-template: repeat(4, 100px) / repeat(4, 100px);
+    align-content: center;
+    justify-content: center;
+}
+
+.imagens {
+    box-shadow: -4px 4px 4px 1px #000000d4;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: 4px ridge #000874;
+    border-radius: 50%;
+    background-image: url(imagens/Interogacao_caracter.jpg);
+}
+
+.imagens>img {
+    width: 100px;
+    height: 100px;
+}
+
+#img1,
+#img2,
+#img3,
+#img4,
+#img5,
+#img6,
+#img7,
+#img8,
+#img9,
+#img10,
+#img11,
+#img12,
+#img13,
+#img14,
+#img15,
+#img16 {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
