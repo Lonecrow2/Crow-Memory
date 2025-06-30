@@ -1,39 +1,77 @@
-const cartas = document.querySelectorAll(".imagens")
+let cartas
 let primeira_carta = false
-let trava = "bloqueado" // só libera o jogo depois que as imagens forem escondidas
+let trava = "bloqueado"
 
-// Mostra todas as imagens por um tempinho no início, depois esconde
-cartas.forEach(carta1 => {
-    let imagem_1 = carta1.querySelector("img")
-    imagem_1.style.opacity = "1" // todas aparecem no começo
+function embaralhar(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+            ;[array[i], array[j]] = [array[j], array[i]]
+    }
+    return array
+}
+
+function iniciarJogo() {
+    cartas = document.querySelectorAll(".imagens")
+
+    const caminhos_src = [
+        "imagens/lampada.jpg",
+        "imagens/notebook.jpg",
+        "imagens/torre.jpg",
+        "imagens/janela.jpg",
+        "imagens/banheiro feminino.jpg",
+        "imagens/relogio.jpg",
+        "imagens/vazo de rosas.jpg",
+        "imagens/galinha.jpg",
+        "imagens/banheiro feminino.jpg",
+        "imagens/lampada.jpg",
+        "imagens/notebook.jpg",
+        "imagens/vazo de rosas.jpg",
+        "imagens/janela.jpg",
+        "imagens/galinha.jpg",
+        "imagens/relogio.jpg",
+        "imagens/torre.jpg"
+    ]
+
+    const embaralhados = embaralhar([...caminhos_src])
+
+    // Coloca as imagens embaralhadas em cada div
+    cartas.forEach((div, index) => {
+        div.innerHTML = `<img src="${embaralhados[index]}" alt="imagem ${index + 1}">`
+    })
+
+    // Remove classe encontrada de todas as imagens
+    document.querySelectorAll(".imagens img").forEach(img => {
+        img.classList.remove("encontrada")
+        img.style.opacity = "1"
+    })
+
+    // Esconde as imagens após um tempo
     setTimeout(() => {
-        imagem_1.style.opacity = "0" // depois somem
-        trava = "desbloqueado" // agora o jogador pode começar a jogar
+        document.querySelectorAll(".imagens img").forEach(img => {
+            img.style.opacity = "0"
+        })
+        trava = "desbloqueado"
     }, 1500)
-})
 
-cartas.forEach(carta => {
-    carta.addEventListener("click", () => {
-        if (trava == "desbloqueado") {
-            let imagem = carta.querySelector("img")
+    // Adiciona eventos de clique
+    adicionarEventos()
+}
 
-            // se essa carta já foi descoberta, ignoramos o clique
-            if (imagem.classList.contains("encontrada")) {
-                return
-            }
+function adicionarEventos() {
+    document.querySelectorAll(".imagens").forEach(carta => {
+        carta.onclick = () => {
+            if (trava !== "desbloqueado") return
 
-            // mostra a imagem se ela estiver escondida
+            const imagem = carta.querySelector("img")
+            if (imagem.classList.contains("encontrada")) return
+
             if (imagem.style.opacity === "0" || imagem.style.opacity === "") {
                 imagem.style.opacity = "1"
             }
 
-            // se for a primeira carta clicada
-            if (primeira_carta == false) {
+            if (!primeira_carta) {
                 primeira_carta = imagem
-            }
-
-            // se já tem uma carta aberta e o jogador clicou em uma diferente
-            else if (imagem !== primeira_carta) {
+            } else if (imagem !== primeira_carta) {
                 trava = "bloqueado"
 
                 if (imagem.src !== primeira_carta.src) {
@@ -52,4 +90,20 @@ cartas.forEach(carta => {
             }
         }
     })
-})
+}
+
+function mostrarCartas() {
+    document.querySelectorAll(".imagens img").forEach(imagem => {
+        if (
+            !imagem.classList.contains("encontrada") &&
+            (imagem.style.opacity === "0" || imagem.style.opacity === "")
+        ) {
+            imagem.style.opacity = "1"
+            setTimeout(() => {
+                imagem.style.opacity = "0"
+            }, 1500)
+        }
+    })
+}
+
+window.onload = iniciarJogo
