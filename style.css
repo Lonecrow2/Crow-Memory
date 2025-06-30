@@ -28,7 +28,7 @@ main {
     height: 100%;
     overflow: hidden;
     border: 4px ridge #000874;
-    border-radius: 50%;
+    border-radius: 20%;
     background-image: url(imagens/Interogacao_caracter.jpg);
 }
 
@@ -53,7 +53,7 @@ main {
 #img14,
 #img15,
 #img16 {
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.4s ease;
   pointer-events: none;
 }

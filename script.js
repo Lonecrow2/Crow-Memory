@@ -2,6 +2,13 @@ const cartas = document.querySelectorAll(".imagens");
 let primeira_carta = false
 let trava = "desbloqueado"
 
+cartas.forEach(carta1 => {
+    setTimeout(() => {
+        let imagem_1 = carta1.querySelector("img")
+        imagem_1.style.opacity = "0"
+    }, 1500)
+})
+
 cartas.forEach(carta => {
     carta.addEventListener("click", () => {
         if (trava == "desbloqueado") {
