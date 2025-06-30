@@ -1,22 +1,22 @@
 const cartas = document.querySelectorAll(".imagens");
-primeira_carta = null
+let primeira_carta = false
 
 cartas.forEach(carta => {
     carta.addEventListener("click", () => {
         let imagem = carta.querySelector("img");
         if (imagem.style.opacity === "0" || imagem.style.opacity === "") {
             imagem.style.opacity = "1";
-        } if (!primeira_carta) {
+        } if (primeira_carta == false) {
             primeira_carta = imagem
         } else {
             if (imagem.src !== primeira_carta.src) {
                 setTimeout(() => {
                     imagem.style.opacity = "0"
                     primeira_carta.style.opacity = "0"
-                    primeira_carta = null
-                }, 1000)
+                    primeira_carta = false
+                }, 500)
             } else {
-                primeira_carta = null
+                primeira_carta = false
             }
         }
     });
