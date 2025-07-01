@@ -1,7 +1,10 @@
 @charset "UTF8";
 
 body {
-    width: 98vw;
+    border: 10px ridge red;
+    border: 10px ridge #0200ff;
+    margin: 0px;
+    box-shadow: inset 0px 0px 100px #000000;
     height: 100vh;
     background-image: url(imagens/fundo.png);
     background-size: 100% 100%;
@@ -10,13 +13,15 @@ body {
 
 main {
     display: grid;
-    place-items: center;
+    grid-template: auto auto/ auto auto;
     width: 100%;
     height: 100%;
+    background-color: #00000063;
 }
 
 #container_grid {
     display: grid;
+    grid-area: 1 / 1 / 2 / 3;
     place-items: center;
     gap: 40px;
     grid-template: repeat(4, 100px) / repeat(4, 100px);
@@ -40,6 +45,10 @@ main {
     height: 100px;
 }
 
+.imagens:hover {
+    box-shadow: inset 0px 0px 10px #0004ff00;
+}
+
 #img1,
 #img2,
 #img3,
@@ -61,3 +70,39 @@ main {
     pointer-events: none;
 }
 
+#espiar {
+    box-shadow: inset 0px 0px 10px #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5%;
+    align-self: center;
+    justify-self: start;
+    background-image: radial-gradient(#001aff, #02028a);
+    border-radius: 10px;
+    border: 5px ridge #0032bb;
+    color: #afafff;
+    font-weight: bold;
+    font-size: 20px;
+    width: 130px;
+    height: 50px
+}
+
+#reiniciar {
+    box-shadow: inset 0px 0px 10px #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 5%;
+    align-self: center;
+    justify-self: end;
+    background-image: radial-gradient(#001aff, #02028a);
+    border-radius: 10px;
+    border: 5px ridge #0032bb;
+    color: #afafff;
+    font-weight: bold;
+    font-size: 20px;
+    width: 130px;
+    height: 50px
+}
+
+#reiniciar:hover,
+#espiar:hover {
+    box-shadow: inset 0px 0px 10px #5f43ff;
+}
