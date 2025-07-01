@@ -1,8 +1,7 @@
 @charset "UTF8";
 
 body {
-    border: 10px ridge red;
-    border: 10px ridge #0200ff;
+    border: 10px ridge #ff6a00;
     margin: 0px;
     box-shadow: inset 0px 0px 100px #000000;
     min-height: 100vh;
@@ -21,7 +20,7 @@ h1 {
     margin-top: 10px;
     color: #d68b00;
     border-radius: 20px;
-    text-shadow: 2px 2px 3px black;
+    text-shadow: 0px 0px 10px #ff6a00;
 }
 
 main {
@@ -55,7 +54,7 @@ footer {
     font-weight: bold;
     padding: 0px;
     text-align: center;
-    color: #001aff;
+    color: #ffffff;
     text-shadow: 2px 2px 3px black;
 }
 
@@ -75,7 +74,7 @@ footer {
     height: 100%;
     overflow: hidden;
     box-shadow: inset 0px 0px 10px #ffee00;
-    border: 8px ridge #0200ff;
+    border: 8px ridge #ff6a00;
     border-radius: 20%;
     background-image: url(imagens/Interogacao_caracter.jpg);
     background-size: 100% 100%;
@@ -113,39 +112,37 @@ footer {
 
 #espiar {
     grid-area: 3 / 3 / 4 / 4;
-    box-shadow: inset 0px 0px 10px #000000;
-    font-family: Arial, Helvetica, sans-serif;
     margin-left: 5%;
     align-self: center;
     justify-self: start;
-    background-image: radial-gradient(#001aff, #02028a);
-    border-radius: 10px;
-    border: 5px ridge #0032bb;
-    color: #afafff;
-    font-weight: bold;
     font-size: 1.5vw;
     padding: 10px;
 }
 
 #reiniciar {
     grid-area: 3 / 2 / 4 / 3;
-    box-shadow: inset 0px 0px 10px #000000;
-    font-family: Arial, Helvetica, sans-serif;
     margin-right: 5%;
     align-self: center;
     justify-self: end;
-    background-image: radial-gradient(#001aff, #02028a);
-    border-radius: 10px;
-    border: 5px ridge #0032bb;
-    color: #afafff;
-    font-weight: bold;
     font-size: 1.5vw;
     padding: 10px;
 }
 
+#reiniciar,
+#espiar {
+    border: 5px ridge #ff6a00;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: inset 0px 0px 10px #000000;
+    background-image: radial-gradient(#943e00, #ff6a00);
+
+}
+
 #reiniciar:hover,
 #espiar:hover {
-    box-shadow: inset 0px 0px 10px #5f43ff;
+    box-shadow: inset 0px 0px 10px #ffec43;
 }
 
 @media (max-height: 734px) {
@@ -154,15 +151,17 @@ footer {
     }
 }
 
-@media (max-width: 670px){
+@media (max-width: 670px) {
     #container_grid {
         grid-template: repeat(4, 67px) / repeat(4, 14%);
     }
-    #reiniciar{
+
+    #reiniciar {
         font-size: 3vw;
     }
-     #espiar{
+
+    #espiar {
         font-size: 3vw;
     }
-    
+
 }
