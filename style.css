@@ -11,7 +11,7 @@ body {
     background-repeat: no-repeat;
 }
 
-h1{
+h1 {
     grid-area: 1 / 2 / 2 / 4;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 5vw;
@@ -27,16 +27,30 @@ h1{
 main {
     display: grid;
     gap: 20px;
-    grid-template: auto auto auto / repeat(4, 1fr);
+    grid-template: repeat(3, 1fr) / repeat(4, 1fr);
     width: 100%;
     height: 100vh;
     background-color: #00000063;
 }
 
-#logo{
+footer {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2vw;
+    margin: 15px 0px 0px 0px;
+    font-weight: bold;
+    background-color: #00000063;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 3px black;
+}
+
+#logo {
     grid-area: 1 / 1 / 2 / 2;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 60px;
+    font-size: 5vw;
     margin: 15px 0px 0px 0px;
     font-weight: bold;
     padding: 0px;
@@ -64,11 +78,12 @@ main {
     border: 8px ridge #0200ff;
     border-radius: 20%;
     background-image: url(imagens/Interogacao_caracter.jpg);
+    background-size: 100% 100%;
 }
 
 .imagens>img {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
 }
 
 .imagens:hover {
@@ -108,9 +123,8 @@ main {
     border: 5px ridge #0032bb;
     color: #afafff;
     font-weight: bold;
-    font-size: 20px;
-    width: 130px;
-    height: 50px
+    font-size: 1.5vw;
+    padding: 10px;
 }
 
 #reiniciar {
@@ -125,12 +139,30 @@ main {
     border: 5px ridge #0032bb;
     color: #afafff;
     font-weight: bold;
-    font-size: 20px;
-    width: 130px;
-    height: 50px
+    font-size: 1.5vw;
+    padding: 10px;
 }
 
 #reiniciar:hover,
 #espiar:hover {
     box-shadow: inset 0px 0px 10px #5f43ff;
+}
+
+@media (max-height: 734px) {
+    #container_grid {
+        grid-template: repeat(4, 70px) / repeat(4, 70px);
+    }
+}
+
+@media (max-width: 670px){
+    #container_grid {
+        grid-template: repeat(4, 67px) / repeat(4, 14%);
+    }
+    #reiniciar{
+        font-size: 3vw;
+    }
+     #espiar{
+        font-size: 3vw;
+    }
+    
 }
