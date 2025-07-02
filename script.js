@@ -2,6 +2,7 @@ let cartas
 let primeira_carta = false
 let trava = "bloqueado"
 
+
 function embaralhar(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1))
@@ -53,6 +54,11 @@ function iniciarJogo() {
         trava = "desbloqueado"
     }, 1500)
 
+    let pontos1 = document.querySelector("#valor")
+    let numero_0 = Number(pontos1.textContent)
+    let resultado1 = 0
+    pontos1.textContent = resultado1
+
     // Adiciona eventos de clique
     adicionarEventos()
 }
@@ -85,6 +91,10 @@ function adicionarEventos() {
                     imagem.classList.add("encontrada")
                     primeira_carta.classList.add("encontrada")
                     primeira_carta = false
+                    let pontos = document.querySelector("#valor")
+                    let numero_0 = Number(pontos.textContent)
+                    let resultado = numero_0 + 1
+                    pontos.innerHTML = resultado
                     trava = "desbloqueado"
                 }
             }
