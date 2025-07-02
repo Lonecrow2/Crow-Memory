@@ -1,7 +1,7 @@
 let cartas
 let primeira_carta = false
 let trava = "bloqueado"
-
+let controle_incio = 0
 
 function embaralhar(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -43,16 +43,16 @@ function iniciarJogo() {
     // Remove classe encontrada de todas as imagens
     document.querySelectorAll(".imagens img").forEach(img => {
         img.classList.remove("encontrada")
-        img.style.opacity = "1"
+
     })
 
     // Esconde as imagens após um tempo
-    setTimeout(() => {
-        document.querySelectorAll(".imagens img").forEach(img => {
-            img.style.opacity = "0"
-        })
+
+    document.querySelectorAll(".imagens img").forEach(img => {
+        img.style.opacity = "0"
         trava = "desbloqueado"
-    }, 1500)
+    })
+
 
     let pontos1 = document.querySelector("#valor")
     let numero_0 = Number(pontos1.textContent)
@@ -71,9 +71,10 @@ function adicionarEventos() {
             const imagem = carta.querySelector("img")
             if (imagem.classList.contains("encontrada")) return
 
-            if (imagem.style.opacity === "0" || imagem.style.opacity === "") {
+            if (controle_incio === 1 && (imagem.style.opacity === "0" || imagem.style.opacity === "")) {
                 imagem.style.opacity = "1"
             }
+
 
             if (!primeira_carta) {
                 primeira_carta = imagem
@@ -101,6 +102,24 @@ function adicionarEventos() {
         }
     })
 }
+
+function ver_imagens_reiniciar() {
+    setTimeout(() => {
+        const cartas_res = document.querySelectorAll(".imagens img");
+        cartas_res.forEach(carta => {
+            carta.style.opacity = "1"; // Mostra a imagem
+        });
+
+        // Depois de 1.5s, esconde novamente
+        setTimeout(() => {
+            cartas_res.forEach(carta => {
+                carta.style.opacity = "0";
+            });
+        }, 1500);
+    }, 0);
+    controle_incio = 1
+}
+
 
 function mostrarCartas() {
     document.querySelectorAll(".imagens img").forEach(imagem => {
