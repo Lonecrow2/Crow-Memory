@@ -137,6 +137,15 @@ footer {
     padding: 10px;
 }
 
+#timer{
+     grid-area: 1 / 4 / 2 / 5;
+    margin-left: 5%;
+    align-self: center;
+    justify-self: start;
+    font-size: 3vw;
+    padding: 10px;
+}
+#timer,
 #pontuacao,
 #reiniciar,
 #espiar {
