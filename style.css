@@ -129,6 +129,7 @@ footer {
 }
 
 #pontuacao {
+    text-shadow: 0px 0px 10px #2bff00 !important;
     grid-area: 1 / 4 / 2 / 5;
     margin-left: 5%;
     align-self: center;
@@ -138,13 +139,14 @@ footer {
 }
 
 #timer{
-     grid-area: 1 / 4 / 2 / 5;
+    grid-area: 1 / 4 / 2 / 5;
     margin-left: 5%;
     align-self: center;
     justify-self: start;
     font-size: 3vw;
     padding: 10px;
 }
+
 #timer,
 #pontuacao,
 #reiniciar,
