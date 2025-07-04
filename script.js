@@ -1,4 +1,3 @@
-let cartas
 let primeira_carta = false
 let trava = "bloqueado"
 let controle_incio = 0
