@@ -138,7 +138,7 @@ footer {
     padding: 10px;
 }
 
-#timer{
+#timer {
     grid-area: 1 / 4 / 2 / 5;
     margin-left: 5%;
     align-self: center;
@@ -148,9 +148,10 @@ footer {
 }
 
 .imagens img {
-  user-drag: none;
-  -webkit-user-drag: none;
-  pointer-events: auto; /* caso precise garantir que ainda clique */
+    user-drag: none;
+    -webkit-user-drag: none;
+    pointer-events: auto;
+    /* caso precise garantir que ainda clique */
 }
 
 

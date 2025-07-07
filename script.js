@@ -1,10 +1,9 @@
 let primeira_carta = false
 let trava = "bloqueado"
 let controle_incio = 0
-
 let timerIniciado = false;
 let segundos = 0;
-let intervalo;
+let intervalo
 
 function iniciarTimer() {
     segundos = 0;
@@ -31,7 +30,7 @@ function iniciarJogo() {
     segundos = 0;                      // Zera a contagem
     timerIniciado = false;            // Permite reiniciar quando clicar na 1ª carta
 
-    cartas = document.querySelectorAll(".imagens")
+    let cartas = document.querySelectorAll(".imagens")
 
     const caminhos_src = [
         "imagens/lampada.jpg",
