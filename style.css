@@ -148,7 +148,6 @@ footer {
 }
 
 .imagens img {
-    user-drag: none;
     -webkit-user-drag: none;
     pointer-events: auto;
     /* caso precise garantir que ainda clique */
