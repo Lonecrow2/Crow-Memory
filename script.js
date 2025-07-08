@@ -115,7 +115,7 @@ function adicionarEventos() {
                     }, 500)
                 }
                 // Se forem iguais, marca como encontradas e soma ponto
-                else if(trava == "desbloqueado"){
+                else if (controle_incio == 1) {
                     imagem.classList.add("encontrada")
                     primeira_carta.classList.add("encontrada")
                     primeira_carta = false
@@ -123,7 +123,7 @@ function adicionarEventos() {
                     let numero_0 = Number(pontos.textContent)
                     let resultado = numero_0 + 1
                     pontos.innerHTML = resultado
-                    
+                    trava = "desbloqueado"
                     if (resultado === 8) {
                         clearInterval(intervalo); // ou: pararTimer(); se estiver usando função
                     }
@@ -158,9 +158,11 @@ function mostrarCartas() {
             !imagem.classList.contains("encontrada") &&
             (imagem.style.opacity === "0" || imagem.style.opacity === "")
         ) {
+            trava = "bloqueado"
             imagem.style.opacity = "1"
             setTimeout(() => {
                 imagem.style.opacity = "0"
+                trava = "desbloqueado"
             }, 1500)
         }
     })
