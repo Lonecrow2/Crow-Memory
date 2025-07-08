@@ -115,7 +115,7 @@ function adicionarEventos() {
                     }, 500)
                 }
                 // Se forem iguais, marca como encontradas e soma ponto
-                else {
+                else if(trava == "desbloqueado"){
                     imagem.classList.add("encontrada")
                     primeira_carta.classList.add("encontrada")
                     primeira_carta = false
@@ -123,7 +123,7 @@ function adicionarEventos() {
                     let numero_0 = Number(pontos.textContent)
                     let resultado = numero_0 + 1
                     pontos.innerHTML = resultado
-                    trava = "desbloqueado"
+                    
                     if (resultado === 8) {
                         clearInterval(intervalo); // ou: pararTimer(); se estiver usando função
                     }
