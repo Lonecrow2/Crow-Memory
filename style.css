@@ -169,33 +169,7 @@ footer {
     background-image: radial-gradient(#943e00, #ff6a00);
 }
 
-
 #reiniciar:hover,
 #espiar:hover {
     box-shadow: inset 0px 0px 10px #ffec43;
-}
-
-@media (max-height: 734px) {
-    #container_grid {
-        grid-template: repeat(4, 70px) / repeat(4, 70px);
-    }
-}
-
-@media (max-width: 670px) {
-    main{
-        gap: 0px;
-    }
-    #container_grid {
-        grid-template: repeat(4, 67px) / repeat(4, 14%);
-    }
-
-    #reiniciar {
-        font-size: 2vw;
-        padding: 4px;
-    }
-
-    #espiar {
-        font-size: 2vw;
-    }
-
 }
