@@ -21,6 +21,7 @@ h1 {
     color: #d68b00;
     border-radius: 20px;
     text-shadow: 0px 0px 10px #ff6a00;
+    white-space: nowrap;
 }
 
 main {
@@ -136,6 +137,7 @@ footer {
     justify-self: start;
     font-size: 3vw;
     padding: 10px;
+    white-space: nowrap;
 }
 
 #timer {
@@ -180,16 +182,20 @@ footer {
 }
 
 @media (max-width: 670px) {
+    main{
+        gap: 0px;
+    }
     #container_grid {
         grid-template: repeat(4, 67px) / repeat(4, 14%);
     }
 
     #reiniciar {
-        font-size: 3vw;
+        font-size: 2vw;
+        padding: 4px;
     }
 
     #espiar {
-        font-size: 3vw;
+        font-size: 2vw;
     }
 
 }
