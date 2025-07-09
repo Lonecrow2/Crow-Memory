@@ -83,7 +83,7 @@ function iniciarJogo() {
 function adicionarEventos() {
     document.querySelectorAll(".imagens").forEach(carta => {
         carta.onclick = () => {
-            if (trava !== "desbloqueado") return
+            if (controle_incio == 1 && (trava !== "desbloqueado")) return
 
             const imagem = carta.querySelector("img")
             if (imagem.classList.contains("encontrada")) return
@@ -155,7 +155,7 @@ function ver_imagens_reiniciar() {
 function mostrarCartas() {
     document.querySelectorAll(".imagens img").forEach(imagem => {
         if (
-            !imagem.classList.contains("encontrada") &&
+            !imagem.classList.contains("encontrada") && controle_incio == 1 &&
             (imagem.style.opacity === "0" || imagem.style.opacity === "")
         ) {
             trava = "bloqueado"
