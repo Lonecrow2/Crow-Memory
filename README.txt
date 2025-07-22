@@ -29,3 +29,5 @@ Jogo de memória interativo estilo *point-and-click*, com mecânica de matching 
 - Autor: **Ernesto Rampanelli Neto**  
 - Imagens geradas por IA e editadas no [Photopea](https://www.photopea.com/)
 
+
+©Ernesto Rampanelli Neto-Todos os direitos reservados.
