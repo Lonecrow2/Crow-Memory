@@ -25,6 +25,7 @@ function embaralhar(array) {
 
 // Inicia o jogo: embaralha imagens, reseta cartas e pontos
 function iniciarJogo() {
+    som.play()
     clearInterval(intervalo);          // Para o timer anterior, se existir
     document.querySelector("#timer_valor").textContent = 0 // Reseta no HTML
     segundos = 0;                      // Zera a contagem
@@ -84,10 +85,9 @@ function adicionarEventos() {
     document.querySelectorAll(".imagens").forEach(carta => {
         carta.onclick = () => {
             if (controle_incio == 1 && (trava !== "desbloqueado")) return
-
             const imagem = carta.querySelector("img")
             if (imagem.classList.contains("encontrada")) return
-
+            
             // Mostra a carta apenas se o controle inicial estiver ativo
             if (controle_incio === 1 && (imagem.style.opacity === "0" || imagem.style.opacity === "")) {
                 imagem.style.opacity = "1"
@@ -95,8 +95,9 @@ function adicionarEventos() {
                     iniciarTimer();
                     timerIniciado = true;
                 }
+                som2.play('')
             }
-
+            
             // Primeira carta clicada
             if (!primeira_carta) {
                 primeira_carta = imagem
@@ -133,8 +134,11 @@ function adicionarEventos() {
     })
 }
 
+const som = new Audio('sons/tick.mp3')
+const som2 = new Audio('sons/bup.mp3')
 // Mostra todas as cartas rapidamente ao reiniciar ou iniciar (efeito "espiar")
 function ver_imagens_reiniciar() {
+    som.play()
     setTimeout(() => {
         const cartas_res = document.querySelectorAll(".imagens img");
         cartas_res.forEach(carta => {
@@ -164,6 +168,7 @@ function mostrarCartas() {
                 imagem.style.opacity = "0"
                 trava = "desbloqueado"
             }, 1500)
+            som.play()
         }
     })
 }
