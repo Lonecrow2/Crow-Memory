@@ -61,7 +61,9 @@
     main {
         gap: 0px;
     }
-
+footer{
+  font-size: 3vw;
+}
     #container_grid {
         grid-template: repeat(4, 67px) / repeat(4, 14%);
     }
