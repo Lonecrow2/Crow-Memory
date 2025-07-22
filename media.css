@@ -33,11 +33,31 @@
 
 @media (max-height: 734px) {
     #container_grid {
-        grid-template: repeat(4, 70px) / repeat(4, 70px);
+        grid-template: repeat(4, 57px) / repeat(4, 75px);
     }
+}
+@media (max-height: 563px) {
+    #container_grid {
+        gap: 25px;
+        grid-template: repeat(4, 49px) / repeat(4, 79px);
+    }
+    .imagens{
+        border: 4px ridge #ff6a00;
+    }
+    #timer, #pontuacao, #reiniciar, #espiar {
+    border: 3px ridge #ff6a00;
+}
+
+#reiniciar {
+    font-size: 1.5vw;
+    padding: 3px;
+}
 }
 
 @media (max-width: 670px) {
+  body{
+    background-image: url(imagens/fundo_cell.jpg);
+  }
     main {
         gap: 0px;
     }

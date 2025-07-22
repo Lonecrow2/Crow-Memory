@@ -5,7 +5,7 @@ body {
     margin: 0px;
     box-shadow: inset 0px 0px 100px #000000;
     min-height: 100vh;
-    background-image: url(imagens/fundo.png);
+    background-image: url(imagens/fundo.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }

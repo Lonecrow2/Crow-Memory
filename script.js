@@ -33,22 +33,22 @@ function iniciarJogo() {
     let cartas = document.querySelectorAll(".imagens")
 
     const caminhos_src = [
-        "imagens/lampada.jpg",
+        "imagens/astronauta.jpg",
         "imagens/notebook.jpg",
-        "imagens/torre.jpg",
-        "imagens/janela.jpg",
-        "imagens/banheiro feminino.jpg",
-        "imagens/relogio.jpg",
-        "imagens/vazo de rosas.jpg",
-        "imagens/galinha.jpg",
-        "imagens/banheiro feminino.jpg",
-        "imagens/lampada.jpg",
+        "imagens/cell.jpg",
+        "imagens/controle.jpg",
+        "imagens/dormindo.jpg",
+        "imagens/fone.jpg",
+        "imagens/livro.jpg",
+        "imagens/mago.jpg",
+        "imagens/dormindo.jpg",
+        "imagens/astronauta.jpg",
         "imagens/notebook.jpg",
-        "imagens/vazo de rosas.jpg",
-        "imagens/janela.jpg",
-        "imagens/galinha.jpg",
-        "imagens/relogio.jpg",
-        "imagens/torre.jpg"
+        "imagens/livro.jpg",
+        "imagens/controle.jpg",
+        "imagens/mago.jpg",
+        "imagens/fone.jpg",
+        "imagens/cell.jpg"
     ]
 
     const embaralhados = embaralhar([...caminhos_src])
