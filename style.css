@@ -176,13 +176,11 @@ footer {
 
 #ad1{
     grid-area: 2 / 1 / 3 / 2;
-    background-color: blue;
    width: 100%;
     height: 100%;
 }
 #ad2{
     grid-area: 2 / 4 / 3 / 5;
-    background-color: red;
     width: 100%;
     height: 100%;
 }
