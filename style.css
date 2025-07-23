@@ -27,7 +27,7 @@ h1 {
 main {
     display: grid;
     gap: 20px;
-    grid-template: repeat(3, 1fr) / repeat(4, 1fr);
+    grid-template: 100px auto 100px / 21% 1fr 1fr 20%;
     width: 100%;
     height: 100vh;
     background-color: #00000063;
@@ -61,7 +61,7 @@ footer {
 
 #container_grid {
     display: grid;
-    grid-area: 2 / 1 / 3 / 5;
+    grid-area: 2 / 2 / 3 / 4;
     place-items: center;
     gap: 40px;
     grid-template: repeat(4, 100px) / repeat(4, 100px);
@@ -173,3 +173,34 @@ footer {
 #espiar:hover {
     box-shadow: inset 0px 0px 10px #ffec43;
 }
+
+#ad1{
+    grid-area: 2 / 1 / 3 / 2;
+    background-color: blue;
+   width: 100%;
+    height: 100%;
+}
+#ad2{
+    grid-area: 2 / 4 / 3 / 5;
+    background-color: red;
+    width: 100%;
+    height: 100%;
+}
+
+iframe{
+    width: 100% !important; 
+    
+}
+
+#aswift_2_host{
+    width: 100% !important;
+    
+}
+
+/* .adsbygoogle{
+    height: 100%!important;
+}
+
+.adsbygoogle-noablate{
+    height: 50%!important;
+} */

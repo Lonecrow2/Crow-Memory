@@ -33,7 +33,7 @@
 
 @media (max-height: 734px) {
     #container_grid {
-        grid-template: repeat(4, 57px) / repeat(4, 75px);
+        grid-template: repeat(4, 16%) / repeat(4, 15%);
     }
 }
 @media (max-height: 563px) {
